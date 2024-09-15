@@ -10,11 +10,11 @@ namespace Tickets.BLL.Interfaces
     {
         public Task<T> Get(int? Id);
         public Task<List<T>> GetAll();
-        public Task Remove(int? Id);
+        public Task<int> Remove(T ob);
 
         public Task<int> Add(T ob);
 
-        public Task Update(T ob);
+        public Task<int> Update(T ob);
 
 
 
