@@ -19,8 +19,4 @@
     <ProjectReference Include="..\Tickets.DLL\Tickets.DLL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
 </Project>
