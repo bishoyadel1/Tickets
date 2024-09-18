@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Tickets.BLL.Interfaces;
 using Tickets.BLL.Repositories;
@@ -11,15 +12,26 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(ob =>
+{
+    ob.Password.RequireNonAlphanumeric = true;
+    ob.Password.RequiredLength= 5;
+})
+       .AddEntityFrameworkStores<TicketsDbContext>()
+       .AddDefaultTokenProviders();
+
 builder.Services.AddDbContext<TicketsDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefualtConnection")));
 
 
 //builder.Services.AddScoped<IOrganizrRepository, OrganizrRepository>();
 
+
 builder.Services.AddScoped<IUintOfWork, UintOfWork>();
 
 builder.Services.AddAutoMapper(typeof(MapperProfile));
+
+
 
 var app = builder.Build();
 

@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +10,7 @@ using Tickets.DLL.Models;
 
 namespace Tickets.DLL.Context
 {
-    public class TicketsDbContext : DbContext
+    public class TicketsDbContext : IdentityDbContext<IdentityUser>
     {
         public TicketsDbContext(DbContextOptions<TicketsDbContext> options) : base(options)
         {

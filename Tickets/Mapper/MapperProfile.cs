@@ -1,6 +1,10 @@
-﻿namespace Tickets.Mapper
+﻿using AutoMapper;
+
+namespace Tickets.Mapper
 {
-    public class Profile
+    public class MapperProfile : Profile
     {
+
+
     }
 }

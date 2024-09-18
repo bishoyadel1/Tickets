@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Tickets.BLL.Interfaces
 {
-    internal interface IUintOfWork
+    public interface IUintOfWork
     {
+        public IOrganizrRepository OrganizrRepository { get; set; }
     }
 }
