@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tickets", "Tickets\Tickets.csproj", "{B3FF2695-185B-4176-840E-ED8120AB82C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tickets", "Tickets\Tickets.csproj", "{B3FF2695-185B-4176-840E-ED8120AB82C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tickets.BLL", "Tickets.BLL\Tickets.BLL.csproj", "{5AADC773-FA36-4DB9-916A-42B03938F8FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tickets.BLL", "Tickets.BLL\Tickets.BLL.csproj", "{5AADC773-FA36-4DB9-916A-42B03938F8FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tickets.DLL", "Tickets.DLL\Tickets.DLL.csproj", "{FF53E7F9-5672-44C0-B955-994EB923EC18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tickets.DLL", "Tickets.DLL\Tickets.DLL.csproj", "{FF53E7F9-5672-44C0-B955-994EB923EC18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

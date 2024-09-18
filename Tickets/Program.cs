@@ -1,5 +1,9 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Tickets.BLL.Interfaces;
+using Tickets.BLL.Repositories;
 using Tickets.DLL.Context;
+using Tickets.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +14,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<TicketsDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
+//builder.Services.AddScoped<IOrganizrRepository, OrganizrRepository>();
+
+builder.Services.AddScoped<IUintOfWork, UintOfWork>();
+
+builder.Services.AddAutoMapper(typeof(MapperProfile));
 
 var app = builder.Build();
 
