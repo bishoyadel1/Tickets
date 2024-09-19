@@ -24,7 +24,7 @@ builder.Services.AddDbContext<TicketsDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefualtConnection")));
 
 
-//builder.Services.AddScoped<IOrganizrRepository, OrganizrRepository>();
+builder.Services.AddScoped<IOrganizrRepository, OrganizrRepository>();
 
 
 builder.Services.AddScoped<IUintOfWork, UintOfWork>();
