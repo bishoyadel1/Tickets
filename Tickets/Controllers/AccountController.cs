@@ -8,9 +8,13 @@ namespace Tickets.Controllers
         {
 
         }
+
+
         public IActionResult Index()
         {
             return View();
         }
+
+
     }
 }
