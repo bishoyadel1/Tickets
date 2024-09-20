@@ -16,3 +16,203 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/*Start landing page*/
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.Top-header {
+    width: 100%;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+
+    .navbar-dark .navbar-nav .nav-link:hover {
+        color: red;
+    }
+
+.full-page-bg {
+    background-image: url('../../Images/Dashboard/Main.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full height of viewport */
+    width: 100vw; /* Full width of viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Adjusting article card appearance */
+.article-card {
+    margin-bottom: 20px;
+}
+
+.article-image {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/*
+      .btn-custom {
+        background-color: black;
+        color: white;
+      }
+  */
+.btn-custom:hover {
+    background-color: red;
+    color: white;
+}
+
+a.btn.btn-primary.btn-custom {
+    border: 1px black;
+    background-color: black;
+}
+
+    a.btn.btn-primary.btn-custom:hover {
+        background: red;
+    }
+
+
+/* Footer styling */
+.footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+.sponsor h3, .tickets h4, .tickets h3 {
+    color: #FF4533;
+}
+
+.sponsor {
+    margin-bottom: 20px;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Space between images */
+}
+
+    .images img {
+        max-width: 100%;
+        height: auto;
+        width: 104px; /* Adjust as needed */
+        border-radius: 5px; /* Optional: Rounded corners */
+        transition: transform 0.3s ease;
+    }
+
+        .images img:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+
+.tickets p {
+    color: #AAB1B7;
+}
+
+.tickets a {
+    background: #FF4533;
+    color: #fff;
+    display: inline-block;
+    padding: 14px 35px;
+    font-family: "Anton", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    border: 0;
+    border-radius: 0px;
+    text-align: center;
+    text-transform: capitalize;
+    transition: 0.3s;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+    .tickets a:hover {
+        background: black;
+        color: #FF4533;
+    }
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    .images img {
+        width: 80px; /* Smaller images on smaller screens */
+    }
+}
+
+
+
+/*Start Footer*/
+.footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+.sponsor h3, .tickets h4, .tickets h3 {
+    color: white;
+}
+
+.sponsor {
+    margin-bottom: 20px;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Space between images */
+}
+
+    .images img {
+        max-width: 100%;
+        height: auto;
+        width: 104px; /* Adjust as needed */
+        border-radius: 5px; /* Optional: Rounded corners */
+        transition: transform 0.3s ease;
+    }
+
+        .images img:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+
+.tickets p {
+    color: #AAB1B7;
+}
+
+.tickets a {
+    background: #FF4533;
+    color: #fff;
+    display: inline-block;
+    padding: 14px 35px;
+    font-family: "Anton", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    border: 0;
+    border-radius: 0px;
+    text-align: center;
+    text-transform: capitalize;
+    transition: 0.3s;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+    .tickets a:hover {
+        background: black;
+        color: #FF4533;
+    }
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    .images img {
+        width: 80px; /* Smaller images on smaller screens */
+    }
+}
