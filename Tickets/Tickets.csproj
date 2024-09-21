@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Dashboard\" />
     <Folder Include="wwwroot\css\Dashboard\" />
     <Folder Include="wwwroot\js\Dashboard\" />
   </ItemGroup>
