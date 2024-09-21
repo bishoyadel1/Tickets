@@ -8,5 +8,17 @@ namespace Tickets.Controllers
         {
             return View();
         }
+
+        public IActionResult AddEvent()
+        {
+            return View();
+        }
+        public IActionResult EventRequests()
+        {
+            return View();
+        }
+
+
+
     }
 }

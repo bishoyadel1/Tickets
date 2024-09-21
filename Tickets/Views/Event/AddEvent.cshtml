@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "AddEvent";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h1>Add Your Event Details here :</h1>
+
+
+<!-- Main Section -->
+<main class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="form-container">
+                <h2 class="mb-4">Event Registration Form</h2>
+                <form>
+                    <!-- Event Name -->
+                    <div class="mb-3">
+                        <label for="eventName" class="form-label">Event Name</label>
+                        <input type="text" class="form-control" id="eventName" placeholder="Enter event name" required>
+                    </div>
+
+                    <!-- Total Number of Tickets -->
+                    <div class="mb-3">
+                        <label for="totalTickets" class="form-label">Total Number of Tickets</label>
+                        <input type="number" class="form-control" id="totalTickets" placeholder="Enter total number of tickets" required>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description (500 words max)</label>
+                        <textarea class="form-control" id="description" rows="4" placeholder="Enter event description" maxlength="500" required></textarea>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Image</label>
+                        <input type="file" class="form-control-file" id="image" accept="image/*" required>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="mb-3">
+                        <label for="eventDate" class="form-label">Date</label>
+                        <input type="date" class="form-control" id="eventDate" required>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
