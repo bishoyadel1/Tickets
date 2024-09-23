@@ -233,9 +233,6 @@ namespace Tickets.DLL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("Approved")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
@@ -246,6 +243,12 @@ namespace Tickets.DLL.Migrations
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsApproved")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsRejected")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()

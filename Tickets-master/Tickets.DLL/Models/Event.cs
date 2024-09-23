@@ -19,8 +19,10 @@ namespace Tickets.DLL.Models
         [Required]
         public string? Image { get; set; }
         public string  Description { get; set; }
-        public bool Approved { get; set; }
         public string OrganizerId { get; set; }
         public ICollection<IdentityUser> Users { get; set; }
+
+        public bool IsApproved { get; set; }
+        public bool IsRejected { get; set; }
     }
 }

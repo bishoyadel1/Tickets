@@ -1,0 +1,305 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Migrations\\20240922222555_adding_some_Events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tickets\\Migrations\\20240922222555_adding_some_Events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF53E7F9-5672-44C0-B955-994EB923EC18}|Tickets.DLL\\Tickets.DLL.csproj|e:\\depi .net web development internship\\.net\\projects\\tickets project\\tickets\\tickets.dll\\context\\ticketsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF53E7F9-5672-44C0-B955-994EB923EC18}|Tickets.DLL\\Tickets.DLL.csproj|solutionrelative:tickets.dll\\context\\ticketsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF53E7F9-5672-44C0-B955-994EB923EC18}|Tickets.DLL\\Tickets.DLL.csproj|e:\\depi .net web development internship\\.net\\projects\\tickets project\\tickets\\tickets.dll\\migrations\\20240913100251_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF53E7F9-5672-44C0-B955-994EB923EC18}|Tickets.DLL\\Tickets.DLL.csproj|solutionrelative:tickets.dll\\migrations\\20240913100251_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Migrations\\20240922221523_add_NewColumn_toEvent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tickets\\Migrations\\20240922221523_add_NewColumn_toEvent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Migrations\\20240922221421_update-databaseConnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tickets\\Migrations\\20240922221421_update-databaseConnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|e:\\depi .net web development internship\\.net\\projects\\tickets project\\tickets\\tickets\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|solutionrelative:tickets\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AADC773-FA36-4DB9-916A-42B03938F8FA}|Tickets.BLL\\Tickets.BLL.csproj|e:\\depi .net web development internship\\.net\\projects\\tickets project\\tickets\\tickets.bll\\tickets.bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5AADC773-FA36-4DB9-916A-42B03938F8FA}|Tickets.BLL\\Tickets.BLL.csproj|solutionrelative:tickets.bll\\tickets.bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF53E7F9-5672-44C0-B955-994EB923EC18}|Tickets.DLL\\Tickets.DLL.csproj|e:\\depi .net web development internship\\.net\\projects\\tickets project\\tickets\\tickets.dll\\tickets.dll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{FF53E7F9-5672-44C0-B955-994EB923EC18}|Tickets.DLL\\Tickets.DLL.csproj|solutionrelative:tickets.dll\\tickets.dll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|e:\\depi .net web development internship\\.net\\projects\\tickets project\\tickets\\tickets\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|solutionrelative:tickets\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|e:\\depi .net web development internship\\.net\\projects\\tickets project\\tickets\\tickets\\views\\shared\\_dashboardlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|solutionrelative:tickets\\views\\shared\\_dashboardlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|e:\\depi .net web development internship\\.net\\projects\\tickets project\\tickets\\tickets\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|solutionrelative:tickets\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|e:\\depi .net web development internship\\.net\\projects\\tickets project\\tickets\\tickets\\views\\event\\eventrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|solutionrelative:tickets\\views\\event\\eventrequests.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|e:\\depi .net web development internship\\.net\\projects\\tickets project\\tickets\\tickets\\views\\event\\addevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|solutionrelative:tickets\\views\\event\\addevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|e:\\depi .net web development internship\\.net\\projects\\tickets project\\tickets\\tickets\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|solutionrelative:tickets\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|e:\\depi .net web development internship\\.net\\projects\\tickets project\\tickets\\tickets\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|solutionrelative:tickets\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|e:\\depi .net web development internship\\.net\\projects\\tickets project\\tickets\\tickets\\views\\event\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B3FF2695-185B-4176-840E-ED8120AB82C8}|Tickets\\Tickets.csproj|solutionrelative:tickets\\views\\event\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Migrations\\20240922221651_AddedColumnToTheEvent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Tickets\\Migrations\\20240922221651_AddedColumnToTheEvent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20240922222555_adding_some_Events.cs",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Migrations\\20240922222555_adding_some_Events.cs",
+              "RelativeDocumentMoniker": "Tickets\\Migrations\\20240922222555_adding_some_Events.cs",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Migrations\\20240922222555_adding_some_Events.cs",
+              "RelativeToolTip": "Tickets\\Migrations\\20240922222555_adding_some_Events.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T22:25:55.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20240922221651_AddedColumnToTheEvent.cs",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Migrations\\20240922221651_AddedColumnToTheEvent.cs",
+              "RelativeDocumentMoniker": "Tickets\\Migrations\\20240922221651_AddedColumnToTheEvent.cs",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Migrations\\20240922221651_AddedColumnToTheEvent.cs",
+              "RelativeToolTip": "Tickets\\Migrations\\20240922221651_AddedColumnToTheEvent.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAcwA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T22:16:51.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20240922221523_add_NewColumn_toEvent.cs",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Migrations\\20240922221523_add_NewColumn_toEvent.cs",
+              "RelativeDocumentMoniker": "Tickets\\Migrations\\20240922221523_add_NewColumn_toEvent.cs",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Migrations\\20240922221523_add_NewColumn_toEvent.cs",
+              "RelativeToolTip": "Tickets\\Migrations\\20240922221523_add_NewColumn_toEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T22:15:23.133Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TicketsDbContext.cs",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets.DLL\\Context\\TicketsDbContext.cs",
+              "RelativeDocumentMoniker": "Tickets.DLL\\Context\\TicketsDbContext.cs",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets.DLL\\Context\\TicketsDbContext.cs",
+              "RelativeToolTip": "Tickets.DLL\\Context\\TicketsDbContext.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAIAwwB0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T21:53:01.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20240913100251_init.cs",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets.DLL\\Migrations\\20240913100251_init.cs",
+              "RelativeDocumentMoniker": "Tickets.DLL\\Migrations\\20240913100251_init.cs",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets.DLL\\Migrations\\20240913100251_init.cs",
+              "RelativeToolTip": "Tickets.DLL\\Migrations\\20240913100251_init.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T22:16:00.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20240922221421_update-databaseConnection.cs",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Migrations\\20240922221421_update-databaseConnection.cs",
+              "RelativeDocumentMoniker": "Tickets\\Migrations\\20240922221421_update-databaseConnection.cs",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Migrations\\20240922221421_update-databaseConnection.cs",
+              "RelativeToolTip": "Tickets\\Migrations\\20240922221421_update-databaseConnection.cs",
+              "ViewState": "AgIAAPMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T22:14:21.481Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\appsettings.json",
+              "RelativeDocumentMoniker": "Tickets\\appsettings.json",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\appsettings.json",
+              "RelativeToolTip": "Tickets\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-22T22:12:08.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Tickets.DLL.csproj",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets.DLL\\Tickets.DLL.csproj",
+              "RelativeDocumentMoniker": "Tickets.DLL\\Tickets.DLL.csproj",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets.DLL\\Tickets.DLL.csproj",
+              "RelativeToolTip": "Tickets.DLL\\Tickets.DLL.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-22T21:49:16.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Tickets.BLL.csproj",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets.BLL\\Tickets.BLL.csproj",
+              "RelativeDocumentMoniker": "Tickets.BLL\\Tickets.BLL.csproj",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets.BLL\\Tickets.BLL.csproj",
+              "RelativeToolTip": "Tickets.BLL\\Tickets.BLL.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-22T21:49:15.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Tickets\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Tickets\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T21:21:09.976Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Tickets\\Controllers\\AccountController.cs",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Tickets\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T22:23:11.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "site.css",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Tickets\\wwwroot\\css\\site.css",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Tickets\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAALcAAAAAAAAAAAAAwMcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-21T22:17:20.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EventRequests.cshtml",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Views\\Event\\EventRequests.cshtml",
+              "RelativeDocumentMoniker": "Tickets\\Views\\Event\\EventRequests.cshtml",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Views\\Event\\EventRequests.cshtml",
+              "RelativeToolTip": "Tickets\\Views\\Event\\EventRequests.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAAcwCgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-21T22:16:05.355Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AddEvent.cshtml",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Views\\Event\\AddEvent.cshtml",
+              "RelativeDocumentMoniker": "Tickets\\Views\\Event\\AddEvent.cshtml",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Views\\Event\\AddEvent.cshtml",
+              "RelativeToolTip": "Tickets\\Views\\Event\\AddEvent.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-21T22:03:00.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_DashboardLayout.cshtml",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Views\\Shared\\_DashboardLayout.cshtml",
+              "RelativeDocumentMoniker": "Tickets\\Views\\Shared\\_DashboardLayout.cshtml",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Views\\Shared\\_DashboardLayout.cshtml",
+              "RelativeToolTip": "Tickets\\Views\\Shared\\_DashboardLayout.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-21T21:54:16.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EventController.cs",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Controllers\\EventController.cs",
+              "RelativeDocumentMoniker": "Tickets\\Controllers\\EventController.cs",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Controllers\\EventController.cs",
+              "RelativeToolTip": "Tickets\\Controllers\\EventController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswA8AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T20:59:28.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Views\\Event\\Index.cshtml",
+              "RelativeDocumentMoniker": "Tickets\\Views\\Event\\Index.cshtml",
+              "ToolTip": "E:\\Depi .Net Web Development Internship\\.Net\\Projects\\Tickets Project\\Tickets\\Tickets\\Views\\Event\\Index.cshtml",
+              "RelativeToolTip": "Tickets\\Views\\Event\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-21T20:49:23.852Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
