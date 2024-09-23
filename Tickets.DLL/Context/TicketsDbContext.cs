@@ -17,11 +17,11 @@ namespace Tickets.DLL.Context
         {
             
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=.;Database=Tickets; Encrypt=false ; Integrated Security=True", b => b.MigrationsAssembly("Tickets"));
-            base.OnConfiguring(optionsBuilder);
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("Server=.;Database=Tickets; Encrypt=false ; Integrated Security=True", b => b.MigrationsAssembly("Tickets"));
+        //    base.OnConfiguring(optionsBuilder);
+        //}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
