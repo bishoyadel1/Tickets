@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ using Tickets.DLL.Models;
 
 namespace Tickets.BLL.Repositories
 {
-    public class OrganizrRepository : GenericRepository<Organizer>, IOrganizrRepository
+    public class OrganizrRepository : GenericRepository<IdentityUser>, IOrganizrRepository
     {
         public OrganizrRepository(TicketsDbContext _context) : base(_context)
         {

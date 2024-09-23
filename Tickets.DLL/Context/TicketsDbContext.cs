@@ -20,8 +20,7 @@ namespace Tickets.DLL.Context
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<Organizer> Organizers { get; set; }
+        public DbSet<UserEvent> UserEvent { get; set; }
         public DbSet<Event> Events { get; set; }
     }
 }

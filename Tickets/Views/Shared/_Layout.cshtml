@@ -62,34 +62,56 @@
                             <a class="nav-link fw-bold text-white" asp-area="" asp-controller="Event" asp-action="Index">Dashboard</a>
                         </li>
                     </ul>
-                    <div class="d-flex align-items-center  ">
+                      @if (User.Claims.Any())
+                       {
+                        <div class="d-flex align-items-center  ">
 
 
 
 
-                        <!-- Avatar -->
-                        <div class="dropdown">
-                            <div data-mdb-dropdown-init class="dropdown-toggle d-flex align-items-center hidden-arrow mb-lg-0 mb-3 "
+                            <!-- Avatar -->
+                            <div class="dropdown">
+                                <div data-mdb-dropdown-init class="dropdown-toggle d-flex align-items-center hidden-arrow mb-lg-0 mb-3 "
                                  href="#" id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">
-                                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"
+                                    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"
                                      height="25" alt="Black and White Portrait of a Man" loading="lazy" />
-                                <span class="mx-3 text-white">Bishoy Adel</span>
+                                    <span class="mx-3 text-white">@User.Claims.First()</span>
 
+                                </div>
+
+                                <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdownMenuAvatar">
+                                    <li>
+                                        <a class="nav-link fw-bold" href="#">Link</a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link fw-bold" href="#">Link</a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link fw-bold" href="#">Link</a>
+                                    </li>
+                                </ul>
                             </div>
-
-                            <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdownMenuAvatar">
-                                <li>
-                                    <a class="nav-link fw-bold" href="#">Link</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link fw-bold" href="#">Link</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link fw-bold" href="#">Link</a>
-                                </li>
-                            </ul>
                         </div>
-                    </div>
+                    }
+                    else
+                    {
+                        <div class="d-flex align-items-center  ">
+
+
+
+
+                            <!-- Avatar -->
+                            <div class="dropdown">
+                                <div data-mdb-dropdown-init class="dropdown-toggle d-flex align-items-center hidden-arrow mb-lg-0 mb-3 "
+                                 href="#" id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">
+                                    <a asp-controller="Account" asp-action="Login" class="text-white me-2 ">Login </a>
+                                    <a asp-controller="Account" asp-action="Register" class="text-white  ">Register</a>
+                                </div>
+
+                              
+                            </div>
+                        </div>
+                    }
                     <!-- Left links -->
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

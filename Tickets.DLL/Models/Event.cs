@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace Tickets.DLL.Models
 {
@@ -19,7 +20,7 @@ namespace Tickets.DLL.Models
         public string? Image { get; set; }
         public string  Description { get; set; }
         public bool Approved { get; set; }
-        public User User { get; set; }
-        public Organizer Organizer { get; set; }
+        public string OrganizerId { get; set; }
+        public ICollection<IdentityUser> Users { get; set; }
     }
 }

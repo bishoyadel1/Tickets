@@ -14,7 +14,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(ob =>
 {
-    ob.Password.RequireNonAlphanumeric = true;
+    ob.Password.RequireNonAlphanumeric = false;
+    ob.Password.RequireUppercase= false;
     ob.Password.RequiredLength= 5;
 })
        .AddEntityFrameworkStores<TicketsDbContext>()

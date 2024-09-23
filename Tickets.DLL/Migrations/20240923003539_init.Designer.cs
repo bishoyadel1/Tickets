@@ -12,8 +12,8 @@ using Tickets.DLL.Context;
 namespace Tickets.DLL.Migrations
 {
     [DbContext(typeof(TicketsDbContext))]
-    [Migration("20240918162528_IdentityUser")]
-    partial class IdentityUser
+    [Migration("20240923003539_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -96,6 +96,9 @@ namespace Tickets.DLL.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("EventId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -130,6 +133,8 @@ namespace Tickets.DLL.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EventId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -249,22 +254,16 @@ namespace Tickets.DLL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OrganizerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("OrganizerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("OrganizerId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Events");
                 });
 
-            modelBuilder.Entity("Tickets.DLL.Models.Organizer", b =>
+            modelBuilder.Entity("Tickets.DLL.Models.UserEvent", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -272,58 +271,20 @@ namespace Tickets.DLL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("EventId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Organizers");
-                });
+                    b.HasIndex("EventId");
 
-            modelBuilder.Entity("Tickets.DLL.Models.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.HasIndex("UserId");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Adderss")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DateOfBrith")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("OrganizerId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrganizerId");
-
-                    b.ToTable("Users");
+                    b.ToTable("UserEvent");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -333,6 +294,13 @@ namespace Tickets.DLL.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+                {
+                    b.HasOne("Tickets.DLL.Models.Event", null)
+                        .WithMany("Users")
+                        .HasForeignKey("EventId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -377,46 +345,28 @@ namespace Tickets.DLL.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Tickets.DLL.Models.Event", b =>
+            modelBuilder.Entity("Tickets.DLL.Models.UserEvent", b =>
                 {
-                    b.HasOne("Tickets.DLL.Models.Organizer", "Organizer")
-                        .WithMany("Events")
-                        .HasForeignKey("OrganizerId")
+                    b.HasOne("Tickets.DLL.Models.Event", "Event")
+                        .WithMany()
+                        .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Tickets.DLL.Models.User", "User")
-                        .WithMany("Events")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Organizer");
+                    b.Navigation("Event");
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Tickets.DLL.Models.User", b =>
+            modelBuilder.Entity("Tickets.DLL.Models.Event", b =>
                 {
-                    b.HasOne("Tickets.DLL.Models.Organizer", "Organizer")
-                        .WithMany("Users")
-                        .HasForeignKey("OrganizerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Organizer");
-                });
-
-            modelBuilder.Entity("Tickets.DLL.Models.Organizer", b =>
-                {
-                    b.Navigation("Events");
-
                     b.Navigation("Users");
-                });
-
-            modelBuilder.Entity("Tickets.DLL.Models.User", b =>
-                {
-                    b.Navigation("Events");
                 });
 #pragma warning restore 612, 618
         }

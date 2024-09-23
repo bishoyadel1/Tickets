@@ -1,0 +1,37 @@
+﻿@model RegisterViewModel
+@{
+    Layout = "_AccountLayout";
+}
+
+
+<div class="sidenav">
+         <div class="login-main-text">
+        <h2>Application<br> Register Page</h2>
+            <p> register from here to access.</p>
+         </div>
+      </div>
+      <div class="main">
+         <div class="col-md-6 col-sm-12">
+            <div class="login-form">
+            <form asp-action="Register">
+                  <div class="form-group">
+                     <label>Email</label>
+                     <input type="email" class="form-control" asp-for="Email" placeholder="Email ">
+                     <span asp-validation-for="Email"></span>
+                  </div>
+                  <div class="form-group">
+                     <label>Password</label>
+                     <input type="password" asp-for="Password" class="form-control" placeholder="Password">
+                     <span asp-validation-for="Password"></span>
+                </div> <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" asp-for="ConfirmPassword" class="form-control" placeholder="Password">
+                    <span asp-validation-for="ConfirmPassword"></span>
+                </div>
+                <button type="submit" class="btn btn-black">Register</button>
+                
+               </form>
+            <a type="submit" class="btn btn-secondary" asp-action="login">Login</a>
+            </div>
+         </div>
+      </div>
