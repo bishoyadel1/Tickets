@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Tickets.BLL.Interfaces;
 using Tickets.BLL.Repositories;
 using Tickets.DLL.Context;
+using Tickets.DLL.Models;
 using Tickets.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +30,8 @@ builder.Services.AddScoped<IOrganizrRepository, OrganizrRepository>();
 
 
 builder.Services.AddScoped<IUintOfWork, UintOfWork>();
+
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 
