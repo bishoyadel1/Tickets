@@ -1,4 +1,4 @@
-﻿
+﻿@model Event
 @{
     ViewData["Title"] = "AddEvent";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
@@ -13,35 +13,35 @@
         <div class="col-md-8">
             <div class="form-container">
                 <h2 class="mb-4">Event Registration Form</h2>
-                <form>
+                <form method="post" action="/Event/SaveEvent">
                     <!-- Event Name -->
                     <div class="mb-3">
-                        <label for="eventName" class="form-label">Event Name</label>
-                        <input type="text" class="form-control" id="eventName" placeholder="Enter event name" required>
+                        <label for="Name" class="form-label">Event Name</label>
+                        <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter event name" required>
                     </div>
 
                     <!-- Total Number of Tickets -->
                     <div class="mb-3">
-                        <label for="totalTickets" class="form-label">Total Number of Tickets</label>
-                        <input type="number" class="form-control" id="totalTickets" placeholder="Enter total number of tickets" required>
+                        <label for="TotalNumberOfTicekts" class="form-label">Total Number of Tickets</label>
+                        <input type="number" class="form-control" id="TotalNumberOfTicekts" name="TotalNumberOfTicekts" placeholder="Enter total number of tickets" required>
                     </div>
 
                     <!-- Description -->
                     <div class="mb-3">
-                        <label for="description" class="form-label">Description (500 words max)</label>
-                        <textarea class="form-control" id="description" rows="4" placeholder="Enter event description" maxlength="500" required></textarea>
+                        <label for="Description" class="form-label">Description (500 words max)</label>
+                        <textarea class="form-control" id="Description" name="Description" rows="4" placeholder="Enter event description" maxlength="500" required></textarea>
                     </div>
 
                     <!-- Image -->
                     <div class="mb-3">
-                        <label for="image" class="form-label">Image</label>
-                        <input type="file" class="form-control-file" id="image" accept="image/*" required>
+                        <label for="Image" class="form-label">Image</label>
+                        <input type="file" class="form-control-file" id="Image" name="Image" accept="image/*" required>
                     </div>
 
                     <!-- Date -->
                     <div class="mb-3">
-                        <label for="eventDate" class="form-label">Date</label>
-                        <input type="date" class="form-control" id="eventDate" required>
+                        <label for="Date" class="form-label">Date</label>
+                        <input type="Date" class="form-control" id="Date" name="Date" required>
                     </div>
 
                     <!-- Submit Button -->

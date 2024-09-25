@@ -17,21 +17,24 @@ namespace Tickets.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult AddEvent()
         {
-            return View();
+            var Eevent = new Event();
+            return View(Eevent);
         }
+        [HttpPost]
         public IActionResult SaveEvent(Event objEvent)
         {
-            if (ModelState.IsValid)
+            if (objEvent.Name != null &&
+                objEvent.TotalNumberOfTicekts != null &&
+                objEvent.Description != null &&
+                objEvent.Image != null && objEvent.Date != null)
             {
                 eventRepo.Add(objEvent);
                 return RedirectToAction("Index");
             }
-            else
-            {
-                return View(objEvent);
-            }
+            return View("AddEvent");
         }
         public IActionResult EventRequests()
         {
