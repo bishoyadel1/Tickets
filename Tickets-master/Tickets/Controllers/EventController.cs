@@ -20,6 +20,12 @@ namespace Tickets.Controllers
             return View();
         }
 
+        public IActionResult EventDetails(int Id)
+        {
+            var DesiredEvent = eventRepo.Get(Id).Result;
+            return View(DesiredEvent);
+        }
+
         [HttpGet]
         public IActionResult AddEvent()
         {

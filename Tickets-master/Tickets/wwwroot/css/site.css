@@ -297,6 +297,7 @@ a.btn.btn-primary.btn-custom {
 
 /*Start Footer*/
 .footer {
+    position:relative;
     background-color: black;
     color: white;
     padding: 20px;
