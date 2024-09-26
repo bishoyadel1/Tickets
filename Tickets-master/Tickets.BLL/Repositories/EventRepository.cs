@@ -18,7 +18,7 @@ namespace Tickets.BLL.Repositories
 
         public IEnumerable<Event> GetAllPending()
         {
-            return context.Set<Event>().Where(e => !e.IsApproved).ToList();
+            return context.Set<Event>().Where(e => !e.IsApproved && !e.IsRejected).ToList();
         }
         public IEnumerable<Event> GetAllApprovedEvents()
         {
@@ -39,7 +39,8 @@ namespace Tickets.BLL.Repositories
             var eventToReject = context.Set<Event>().Find(eventId);
             if (eventToReject != null)
             {
-                Remove(eventToReject);
+                //Remove(eventToReject);
+                eventToReject.IsRejected = true;
                 Save();
             }
         }
