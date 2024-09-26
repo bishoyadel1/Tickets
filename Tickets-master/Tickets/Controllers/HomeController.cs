@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using Tickets.BLL.Interfaces;
 using Tickets.BLL.Repositories;
+using Tickets.DLL.Models;
 using Tickets.Models;
 
 namespace Tickets.Controllers
@@ -9,16 +10,18 @@ namespace Tickets.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IEventRepository eventRepository;
+        public HomeController(ILogger<HomeController> logger , IEventRepository _eventRepository)
         {
+            eventRepository = _eventRepository;
             _logger = logger;
         }
 
-        public IActionResult HomeView()
+        public IActionResult Index()
         {
-            return View();
+            var approvedEvents = eventRepository.GetAllApprovedEvents();
+            return View(approvedEvents);
         }
 
         public IActionResult Privacy()

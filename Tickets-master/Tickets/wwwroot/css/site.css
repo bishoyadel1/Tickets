@@ -207,6 +207,13 @@ a.btn.btn-primary.btn-custom {
         }
 
 
+        /* event Details Page*/
+.EventDetailsImage img {
+    width: -webkit-fill-available;
+}
+
+
+
 
 
 

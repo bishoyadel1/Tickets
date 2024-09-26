@@ -22,7 +22,9 @@ namespace Tickets.Controllers
 
         public IActionResult EventDetails(int Id)
         {
+
             var DesiredEvent = eventRepo.Get(Id).Result;
+
             return View(DesiredEvent);
         }
 
