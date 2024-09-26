@@ -7,12 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Tickets.BLL.Interfaces;
 using Tickets.DLL.Context;
+using Tickets.DLL.Models;
 
 namespace Tickets.BLL.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private readonly TicketsDbContext context;
+        public readonly TicketsDbContext context;
 
         public GenericRepository(TicketsDbContext _context)
         {
@@ -24,8 +25,6 @@ namespace Tickets.BLL.Repositories
             await context.Set<T>().AddAsync(ob);
             return context.SaveChanges();
         }
-
-
 
         public async Task<T> Get(int? Id)
         => await context.Set<T>().FindAsync(Id);
@@ -45,5 +44,11 @@ namespace Tickets.BLL.Repositories
             context.Set<T>().Update(ob);
             return context.SaveChanges();
         }
+
+        public void Save()
+        {
+            context.SaveChanges();
+        }
+
     }
 }

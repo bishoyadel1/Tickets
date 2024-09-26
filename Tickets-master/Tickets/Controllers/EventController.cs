@@ -1,16 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Tickets.BLL.Interfaces;
+using Tickets.BLL.Repositories;
+using Tickets.DLL.Context;
 using Tickets.DLL.Models;
-
 namespace Tickets.Controllers
 {
     public class EventController : Controller
     {
         private readonly IGenericRepository<Event> eventRepo;
+        private readonly IEventRepository eventRepository;
 
-        public EventController(IGenericRepository<Event> _eventRepo)
+        public EventController(IGenericRepository<Event> _eventRepo, IEventRepository _eventRepository)
         {
             eventRepo = _eventRepo;
+            eventRepository = _eventRepository;
         }
         public IActionResult Index()
         {
@@ -36,12 +39,29 @@ namespace Tickets.Controllers
             }
             return View("AddEvent");
         }
+
         public IActionResult EventRequests()
         {
-            return View();
+            var unapprovedEvents = eventRepository.GetAllPending();
+            return View(unapprovedEvents);
         }
 
+        public IActionResult ApprovedEvents()
+        {
+            var approvedEvents = eventRepository.GetAllApprovedEvents();
+            return View(approvedEvents);
+        }
+        public IActionResult Approve(int eventId)
+        {
+            eventRepository.ApproveEvent(eventId);
+            return RedirectToAction("EventRequests");
+        }
 
+        public IActionResult RejectEvent(int eventId)
+        {
+            eventRepository.RejectEvent(eventId);
+            return RedirectToAction("EventRequests");
+        }
 
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Tickets.BLL.Interfaces;
+using Tickets.BLL.Repositories;
 using Tickets.Models;
 
 namespace Tickets.Controllers
@@ -7,13 +9,14 @@ namespace Tickets.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult HomeView()
         {
             return View();
         }
@@ -28,5 +31,6 @@ namespace Tickets.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+       
     }
 }

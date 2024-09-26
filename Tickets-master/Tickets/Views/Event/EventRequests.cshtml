@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Event>
 @{
     ViewData["Title"] = "EventRequests";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
@@ -8,40 +8,24 @@
 
 <main class="container my-5">
     <div class="row">
-        <!-- Article 1 -->
-        <div class="col-12">
-            <div class="card">
-                <img src="/Images/Article.jpg" class="card-img-top" alt="Post Image 1">
-                <div class="card-body">
-                    <h5 class="card-title">Article Title 1</h5>
-                    <p class="card-text">Short description of the article goes here. It gives an overview of the content.</p>
-                    <p class="text-muted">Date: Jan 1, 2024</p>
-                    <p class="text-muted">Organizer: John Doe</p>
-                    <div class="d-flex justify-content-between">
-                        <a href="#" class="btn-custom">Accept</a>
-                        <a href="#" class="btn-reject">Reject</a>
+        @foreach (var item in Model)
+        {
+            <div class="col-12">
+                <div class="card">
+                    <img src="@item.Image" class="card-img-top" alt="Post Image 1">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text">@item.Description</p>
+                        <p class="text-muted">Date: @item.Date</p>
+                        @* <p class="text-muted">Organizer: John Doe</p> *@
+                        <div class="d-flex justify-content-between">
+                            <a href="@Url.Action("Approve", "Event", new { eventId = item.Id })" class="btn-custom">Accept</a>
+                            <a href="@Url.Action("RejectEvent", "Event", new { eventId = item.Id  })" class="btn-reject">Reject</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Article 2 -->
-        <div class="col-12">
-            <div class="card">
-                <img src="/Images/Article.jpg" class="card-img-top" alt="Post Image 2">
-                <div class="card-body">
-                    <h5 class="card-title">Article Title 2</h5>
-                    <p class="card-text">Short description of the article goes here. It gives an overview of the content.</p>
-                    <p class="text-muted">Date: Feb 5, 2024</p>
-                    <p class="text-muted">Organizer: Jane Smith</p>
-                    <div class="d-flex justify-content-between">
-                        <a href="#" class="btn-custom">Accept</a>
-                        <a href="#" class="btn-reject">Reject</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        }
         <!-- Add more articles here -->
     </div>
 </main>

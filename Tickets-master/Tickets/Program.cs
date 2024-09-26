@@ -28,6 +28,7 @@ builder.Services.AddDbContext<TicketsDbContext>(options =>
 
 builder.Services.AddScoped<IOrganizrRepository, OrganizrRepository>();
 
+builder.Services.AddScoped<IEventRepository, EventRepository>();
 
 builder.Services.AddScoped<IUintOfWork, UintOfWork>();
 
@@ -57,8 +58,13 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Home}/{action=Index}/{id?}");
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Event}/{action=ApprovedEvents}/{id?}");
 
 app.Run();
