@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Tickets.EmailConfig;
 using Tickets.Models;
 
 namespace Tickets.Controllers
@@ -21,6 +22,63 @@ namespace Tickets.Controllers
             return View();
         }
 
+        public IActionResult ResetPassword(string email , string token)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("Account/ResetPassword")]
+        public async Task<IActionResult> ResetPassword( ResetPasswordViewModel newpass )
+        {
+
+            if(!string.IsNullOrEmpty(newpass.Email) && !string.IsNullOrEmpty(newpass.Token) && ModelState.IsValid)
+            {
+                var user = await userManager.FindByEmailAsync(newpass.Email);
+                if(user != null)
+                {
+                    var newpassword = await userManager.ResetPasswordAsync(user, newpass.Token, newpass.Password);
+                    if(newpassword.Succeeded)
+                    {
+                        return RedirectToAction("Login");
+                    }
+                    else
+                        ModelState.AddModelError(string.Empty, "Invaild Password");
+
+
+                }
+            }
+            return View(newpass);
+        }
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> ForgetPassword(ForgetPasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await userManager.FindByEmailAsync(model.Email);
+                if (user != null)
+                {
+                    var token = await userManager.GeneratePasswordResetTokenAsync(user);
+                    var url = Url.Action("ResetPassword", "Account", new { email = model.Email  , token = token },Request.Scheme);
+                    var email = new Email()
+                    {
+                        Title = "Reset Password",
+                        Body = url,
+                        To = model.Email
+                    };
+                    EmailSetting.SendMail(email);
+                    return RedirectToAction("Login");
+                }
+
+
+                return RedirectToAction("ForgetPassword");
+            }
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
