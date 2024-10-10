@@ -7,6 +7,6 @@
     "\\Tickets-master\\Tickets\\Views",
     "\\Tickets-master\\Tickets\\Views\\Shared"
   ],
-  "SelectedNode": "\\Tickets-master\\Tickets\\Views\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\Tickets-master\\Tickets\\Controllers\\AccountController.cs",
   "PreviewInSolutionExplorer": false
 }

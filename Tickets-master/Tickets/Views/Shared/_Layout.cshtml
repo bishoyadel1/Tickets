@@ -33,9 +33,13 @@
                         <li class="nav-item mx-lg-3">
                             <a class="nav-link fw-bold text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item mx-lg-3">
-                            <a class="nav-link fw-bold text-white" asp-area="" asp-controller="Event" asp-action="Index">Dashboard</a>
-                        </li>
+                        @if (User.IsInRole("Admin") || User.IsInRole("Organizer"))
+                        {
+                            <li class="nav-item mx-lg-3">
+                                <a class="nav-link fw-bold text-white" asp-area="" asp-controller="Event" asp-action="Index">Dashboard</a>
+                            </li>
+                        }
+                      
                     </ul>
 
                     @if (User.Identity.IsAuthenticated)
@@ -44,13 +48,12 @@
                             <div class="dropdown">
                                 <div class="dropdown-toggle d-flex align-items-center hidden-arrow" id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">
                                     <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="User Avatar" loading="lazy" />
-                                    <span class="mx-3 text-white">@User.Identity.Name</span>
+                                    <span class="mx-3 text-white d-inline fw-bold">@User.Identity.Name</span>
+                                    <a class="dropdown-item fw-bold text-white d-inline ms-3" asp-controller="Account" asp-action="Logout">Log Out</a>
+
                                 </div>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-                                    <li>
-                                        <a class="dropdown-item fw-bold" asp-controller="Account" asp-action="Logout">Log Out</a>
-                                    </li>
-                                </ul>
+                              
+
                             </div>
                         </div>
                     }

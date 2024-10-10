@@ -22,6 +22,8 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(ob =>
        .AddEntityFrameworkStores<TicketsDbContext>()
        .AddDefaultTokenProviders();
 
+
+
 builder.Services.AddDbContext<TicketsDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefualtConnection")));
 

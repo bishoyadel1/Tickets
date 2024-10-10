@@ -97,7 +97,7 @@ namespace Tickets.Controllers
                         await signInManager.PasswordSignInAsync(user.UserName, model.Password, false, false);
 
                         var userNow = await userManager.GetUserAsync(User);
-                      
+
                         return RedirectToAction("Index", "Home");
                     }
                     else
@@ -158,5 +158,15 @@ namespace Tickets.Controllers
         }
 
 
+        public async Task<IActionResult> Logout()
+        {
+            var user = await userManager.GetUserAsync(User);
+            if (user != null)
+            {
+                await signInManager.SignOutAsync();
+                return RedirectToAction("Login");
+            }
+            return RedirectToAction("Login");
+        }
     }
 }

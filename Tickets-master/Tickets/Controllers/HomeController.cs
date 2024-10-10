@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Formats.Asn1;
 using Tickets.BLL.Interfaces;
 using Tickets.BLL.Repositories;
 using Tickets.DLL.Models;
@@ -12,14 +14,18 @@ namespace Tickets.Controllers
         private readonly ILogger<HomeController> _logger;
 
         private readonly IEventRepository eventRepository;
-        public HomeController(ILogger<HomeController> logger , IEventRepository _eventRepository)
+        private readonly UserManager<IdentityUser> userManager;
+
+        public HomeController(ILogger<HomeController> logger , IEventRepository _eventRepository, UserManager<IdentityUser> userManager)
         {
             eventRepository = _eventRepository;
+            this.userManager = userManager;
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+
             var approvedEvents = eventRepository.GetAllApprovedEvents();
             return View(approvedEvents);
         }
