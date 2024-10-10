@@ -13,5 +13,6 @@ namespace Tickets.BLL.Interfaces
         IEnumerable<Event> GetAllApprovedEvents();
         void ApproveEvent(int eventId);
         void RejectEvent(int eventId);
-    }
+        IEnumerable<Event> SearchEvents(string searchTerm);
+}
 }

@@ -1,34 +1,53 @@
-﻿@model IEnumerable<Event>
+﻿
+@model IEnumerable<Event>
+
 @{
     Layout = "_Layout";
 }
+
 <div class="full-page-bg">
     <div class="container text-center">
         <h1>Welcome to Tazkartk</h1>
-        <p>Book your Tickets for upcoming Events now !</p>
+        <p>Book your Tickets for upcoming Events now!</p>
     </div>
 </div>
 
-<div class="container">
+<div class="container" style="height:1300px">
     <br />
     <h1 class="display-3">Latest Events</h1>
+
+    <!-- Search Form -->
+    <form asp-controller="Event" asp-action="SearchEvent" method="get">
+        <div class="input-group mb-3">
+            <input type="text" name="searchTerm" class="form-control" placeholder="Search events..." value="@ViewData["SearchTerm"]">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+    </form>
+
     <br />
     <div class="row">
-
-        @foreach (var item in Model)
+        @if (Model.Any())
         {
-            <div class="col-md-4">
-                <div class="card article-card">
-                    <img src="@Url.Content("~/Images/Events/" + item.Image)" class="card-img-top" alt="@item.Name">
-                    <div class="card-body">
-                        <h5 class="card-title">@item.Name</h5>
-                        <p class="card-text">@item.Description</p>
-                        <p class="text-muted">on: @item.Date</p>
-                        <a href="#" class="btn btn-primary btn-custom">Read More</a>
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card article-card">
+                        <img src="@Url.Content("~/Images/Events/" + item.Image)" class="card-img-top" alt="@item.Name">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Name</h5>
+                            <p class="card-text">@item.Description</p>
+                            <p class="text-muted">on: @item.Date</p>
+                            <a href="#" class="btn btn-primary btn-custom">Read More</a>
+                        </div>
                     </div>
                 </div>
+            }
+        }
+        else
+        {
+            <div class="col-12">
+                <p>No events found.</p>
             </div>
         }
-        <!-- Add more articles here -->
     </div>
 </div>
