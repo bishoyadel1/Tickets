@@ -9,11 +9,13 @@ namespace Tickets.Controllers
     {
         private readonly UserManager<IdentityUser> userManager;
         private readonly SignInManager<IdentityUser> signInManager;
+        private readonly RoleManager<IdentityRole> roleManager;
 
-        public AccountController(UserManager<IdentityUser> _userManager, SignInManager<IdentityUser> _signInManager)
+        public AccountController(UserManager<IdentityUser> _userManager, SignInManager<IdentityUser> _signInManager ,RoleManager<IdentityRole> _roleManager)
         {
             userManager = _userManager;
             signInManager = _signInManager;
+            this.roleManager = _roleManager;
         }
 
 
@@ -82,6 +84,9 @@ namespace Tickets.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
+
+       
+
             if (ModelState.IsValid)
             {
                 var user = await userManager.FindByEmailAsync(model.Email);
@@ -90,6 +95,9 @@ namespace Tickets.Controllers
                     if (result)
                     {
                         await signInManager.PasswordSignInAsync(user.UserName, model.Password, false, false);
+
+                        var userNow = await userManager.GetUserAsync(User);
+                      
                         return RedirectToAction("Index", "Home");
                     }
                     else
@@ -112,6 +120,7 @@ namespace Tickets.Controllers
         {
             if (ModelState.IsValid)
             {
+               
                 var user = new IdentityUser()
                 {
                     Email = model.Email,
@@ -119,10 +128,20 @@ namespace Tickets.Controllers
                     
 
                 };
-                     
-              var result = await userManager.CreateAsync(user,model.Password);
-                if (result.Succeeded)
+        
+                var result = await userManager.CreateAsync(user,model.Password);
+                if(model.IsOrganizer is true)
+                     await userManager.AddToRoleAsync(user, "Organizer");
+              
+
+                if (result.Succeeded )
                 {
+                    if (userManager.Users.Count() == 1)
+                    {
+                        await roleManager.CreateAsync(new IdentityRole { Name = "Admin" });
+                        await roleManager.CreateAsync(new IdentityRole { Name = "Organizer" });
+                        await userManager.AddToRoleAsync(user, "Admin");
+                    }
                     return RedirectToAction("Login");
                 }
                 else

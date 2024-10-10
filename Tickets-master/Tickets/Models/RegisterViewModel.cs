@@ -15,6 +15,7 @@ namespace Tickets.Models
         [MinLength(7, ErrorMessage = "Min Length is 7 ")]
         [Compare("Password")]
         public string ConfirmPassword { get; set; }
+        public bool IsOrganizer { get; set; } = false;
 
 
     }

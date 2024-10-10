@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Tickets-master",
+    "\\Tickets-master\\Tickets",
+    "\\Tickets-master\\Tickets\\Controllers",
+    "\\Tickets-master\\Tickets\\Views",
+    "\\Tickets-master\\Tickets\\Views\\Shared"
   ],
+  "SelectedNode": "\\Tickets-master\\Tickets\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }
