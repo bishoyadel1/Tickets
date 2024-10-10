@@ -44,5 +44,21 @@ namespace Tickets.BLL.Repositories
                 Save();
             }
         }
+
+        public IEnumerable<Event> SearchEvents(string searchTerm)
+        {
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                return GetAllApprovedEvents(); // Return all if no search term
+            }
+
+            var lowerSearchTerm = searchTerm.ToLower();
+
+            return GetAllApprovedEvents()
+                .Where(e => e.Name.ToLower().Contains(lowerSearchTerm) ||
+                            e.Description.ToLower().Contains(lowerSearchTerm))
+                .ToList();
+        }
+        }
     }
-}
+

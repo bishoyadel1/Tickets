@@ -20,7 +20,7 @@ namespace Tickets.Controllers
 
         public IActionResult Index()
         {
-            var approvedEvents = new List<Event>();/*eventRepository.GetAllApprovedEvents();*/
+            var approvedEvents = eventRepository.GetAllApprovedEvents();
             return View(approvedEvents);
         }
 

@@ -3,6 +3,7 @@ using Tickets.BLL.Interfaces;
 using Tickets.BLL.Repositories;
 using Tickets.DLL.Context;
 using Tickets.DLL.Models;
+using Tickets.Models;
 namespace Tickets.Controllers
 {
     public class EventController : Controller
@@ -68,6 +69,14 @@ namespace Tickets.Controllers
         {
             eventRepository.RejectEvent(eventId);
             return RedirectToAction("EventRequests");
+        }
+
+        public IActionResult SearchEvent(string searchTerm, string sortBy, bool isAscending = true)
+        {
+
+            var events = eventRepository.SearchEvents(searchTerm);
+
+            return View("~/Views/Home/Index.cshtml", events);
         }
 
     }
