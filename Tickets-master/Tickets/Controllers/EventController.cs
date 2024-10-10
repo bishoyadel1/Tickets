@@ -86,13 +86,7 @@ namespace Tickets.Controllers
             return RedirectToAction("EventRequests");
         }
 
-        //public IActionResult SearchEvent(string searchTerm, string sortBy, bool isAscending = true)
-        //{
-
-        //    var events = eventRepository.SearchEvents(searchTerm);
-
-        //    return View("~/Views/Home/Index.cshtml", events);
-        //}
+      
         public IActionResult SearchEvent(string searchTerm, string sortBy = "Date", bool isAscending = false)
         {
             // Fetch events based on search term
