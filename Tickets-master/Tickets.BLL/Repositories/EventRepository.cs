@@ -23,6 +23,7 @@ namespace Tickets.BLL.Repositories
         public IEnumerable<Event> GetAllApprovedEvents()
         {
             return context.Set<Event>().Where(e => e.IsApproved).ToList();
+            //return new List<Event>();
         }
         public void ApproveEvent(int eventId)
         {

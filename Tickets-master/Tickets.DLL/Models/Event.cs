@@ -18,10 +18,10 @@ namespace Tickets.DLL.Models
         public DateTime Date { get; set; }
 
         [Required]
-        public int TotalNumberOfTicekts { get; set; }
+        public int TotalNumberOfTickets { get; set; }
         public string? Image { get; set; }
         public string  Description { get; set; }
-        public string OrganizerId { get; set; }
+        public string? OrganizerId { get; set; } = null;
         public ICollection<IdentityUser> Users { get; set; }
 
         public bool IsApproved { get; set; }
