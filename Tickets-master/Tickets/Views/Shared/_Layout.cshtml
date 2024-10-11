@@ -48,7 +48,7 @@
                             <div class="dropdown">
                                 <div class="dropdown-toggle d-flex align-items-center hidden-arrow" id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">
                                     <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="User Avatar" loading="lazy" />
-                                    <span class="mx-3 text-white d-inline fw-bold">@User.Identity.Name</span>
+                                    <a class="mx-3 text-white d-inline fw-bold" asp-area="" asp-controller="Event" asp-action="Index">@User.Identity.Name</a>
                                     <a class="dropdown-item fw-bold text-white d-inline ms-3" asp-controller="Account" asp-action="Logout">Log Out</a>
 
                                 </div>
