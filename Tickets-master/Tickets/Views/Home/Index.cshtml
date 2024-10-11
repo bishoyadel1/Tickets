@@ -20,13 +20,36 @@
     <form asp-controller="Event" asp-action="SearchEvent" method="get">
         <div class="input-group mb-3">
             <input type="text" name="searchTerm" class="form-control" placeholder="Search events..." value="@ViewData["SearchTerm"]">
-            <button class="btn btn-primary" type="submit">Search</button>
-        </div>
+            <button class="btn btn-secondary" type="submit">Search</button>
+            </div>
     </form>
+
+    <!-- Sort Options with Bootstrap Dropdown -->
+    <div class="d-flex justify-content-between mb-3">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownSortMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                Sort Events
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownSortMenu">
+                <li>
+                    <a class="dropdown-item" href="@Url.Action("SearchEvent", "Event", new { searchTerm = ViewData["SearchTerm"], sortBy = "Date", isAscending = false })">
+                        Sort by Date 
+                    </a>
+                </li>
+               
+                <li>
+                    <a class="dropdown-item" href="@Url.Action("SearchEvent", "Event", new { searchTerm = ViewData["SearchTerm"], sortBy = "Name", isAscending = false })">
+                        Sort by Name 
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
 
     <br />
     <div class="row">
-        @if (Model.Any())
+        @if (Model != null && Model.Any())
         {
             @foreach (var item in Model)
             {
@@ -36,8 +59,8 @@
                         <div class="card-body">
                             <h5 class="card-title">@item.Name</h5>
                             <p class="card-text">@item.Description</p>
-                            <p class="text-muted">on: @item.Date</p>
-                            <a asp-controller="Event" asp-action="EventDetails" asp-route-id="@item.Id" class="btn btn-primary btn-custom">Read More</a>
+                            <p class="text-muted">on: @item.Date.ToShortDateString()</p>
+                            <a href="#" class="btn btn-primary btn-custom">Read More</a>
                         </div>
                     </div>
                 </div>
