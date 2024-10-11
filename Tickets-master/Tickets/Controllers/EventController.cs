@@ -142,10 +142,33 @@ namespace Tickets.Controllers
         }
 
 
-        public IActionResult SearchEvent(string searchTerm, string sortBy, bool isAscending = true)
-        {
+     
+      
+        public IActionResult SearchEvent(string searchTerm, string sortBy = "Date", bool isAscending = false)
 
+        {
+            // Fetch events based on search term
             var events = eventRepository.SearchEvents(searchTerm);
+
+            // Sorting logic for descending by default
+            switch (sortBy)
+            {
+                case "Date":
+                    events = isAscending ? events.OrderBy(e => e.Date).ToList() : events.OrderByDescending(e => e.Date).ToList();
+                    break;
+                case "Name":
+                    events = isAscending ? events.OrderBy(e => e.Name).ToList() : events.OrderByDescending(e => e.Name).ToList();
+                    break;
+                default:
+                    // Default sorting (by Date in descending order)
+                    events = events.OrderByDescending(e => e.Date).ToList();
+                    break;
+            }
+
+            // Pass search term and sort parameters to the view
+            ViewData["SearchTerm"] = searchTerm;
+            ViewData["SortBy"] = sortBy;
+            ViewData["IsAscending"] = isAscending;
 
             return View("~/Views/Home/Index.cshtml", events);
         }
