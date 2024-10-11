@@ -6,8 +6,8 @@
     <div class="row">
         <!-- Product Image -->
         <div class="col-12 col-md-6 mb-4 mb-md-0 EventDetailsImage">
-        <img src="@Url.Content("~/Images/Events/" + Model.Image)" alt="Product Image" class="product-image">
-        </div>
+@*        <img src="@Url.Content("~/Images/Events/" + Model.Image)" alt="Product Image" class="product-image">
+*@        </div>
         <!-- Product Details -->
         <div class="col-12 col-md-6">
             <div class="details-card">
@@ -16,7 +16,9 @@
                 <p><strong>Date:</strong>@Model.Date</p>
                 <p><strong>Organizer:</strong> (Not Now After Finishing Identity)</p>
             <p><strong>Total available Tickets : </strong> @Model.TotalNumberOfTickets</p>
-                <a href="another-page.html" class="btn btn-custom mt-3">Book Now</a>
+            
+            <a asp-controller="Event" asp-action="BookTicket" asp-route-id="@Model.Id" class="btn btn-primary btn-custom">Book Now</a>
+
             </div>
         </div>
     </div>

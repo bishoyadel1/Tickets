@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Sockets;
 using Tickets.BLL.Interfaces;
 using Tickets.BLL.Repositories;
 using Tickets.DLL.Context;
@@ -13,12 +14,14 @@ namespace Tickets.Controllers
         private readonly IGenericRepository<Event> eventRepo;
         private readonly IEventRepository eventRepository;
         private readonly UserManager<IdentityUser> userManager;
+        private readonly IEventUserRepository eventUserRepository;
 
-        public EventController(IGenericRepository<Event> _eventRepo, IEventRepository _eventRepository, UserManager<IdentityUser> userManager)
+        public EventController(IGenericRepository<Event> _eventRepo, IEventRepository _eventRepository, UserManager<IdentityUser> userManager , IEventUserRepository _eventUserRepository)
         {
             eventRepo = _eventRepo;
             eventRepository = _eventRepository;
             this.userManager = userManager;
+            eventUserRepository = _eventUserRepository;
         }
         public IActionResult Index()
         {
@@ -30,6 +33,32 @@ namespace Tickets.Controllers
             var DesiredEvent = eventRepo.Get(Id).Result;
 
             return View(DesiredEvent);
+        }
+        [Authorize]
+        public async Task<IActionResult> BookTicket(int Id)
+        {
+            var user = await userManager.GetUserAsync(User);
+            var CheckForTicket = await eventRepo.Get(Id);
+            if (CheckForTicket != null)
+            {
+                if (CheckForTicket.TotalNumberOfTickets > 0)
+                {
+                    var UserEvent = new UserEvent { UserId = user.Id, EventId = CheckForTicket.Id };
+                    CheckForTicket.TotalNumberOfTickets--;
+                    await eventUserRepository.Add(UserEvent);
+                    await eventRepository.Update(CheckForTicket);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                    return RedirectToAction("Index", "Home");
+
+
+
+            }
+            else 
+                return NotFound();
+
+          
         }
 
         [Authorize(Roles = "Admin,Organizer")]
@@ -85,6 +114,33 @@ namespace Tickets.Controllers
             eventRepository.RejectEvent(eventId);
             return RedirectToAction("EventRequests");
         }
+
+        [Authorize]
+        public async Task<IActionResult> GetBookedEvents()
+        {
+
+            var user = await userManager.GetUserAsync(User);
+
+            var Event = eventUserRepository.GetEventByUserId(user.Id);
+
+            return View(Event);
+
+        }
+        [Authorize(Roles = "Admin,Organizer")]
+        public async Task<IActionResult> GetTicketUploaded()
+        {
+
+            var user = await userManager.GetUserAsync(User);
+
+            if(user != null)
+            { var events =  eventRepository.GetByOrganizerId(user.Id);
+                return View(events);
+            }
+
+            return NotFound();
+
+        }
+
 
         public IActionResult SearchEvent(string searchTerm, string sortBy, bool isAscending = true)
         {

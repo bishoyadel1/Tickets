@@ -10,6 +10,7 @@ namespace Tickets.BLL.Interfaces
     public interface IEventRepository : IGenericRepository<Event>
     {
         IEnumerable<Event> GetAllPending();
+        IEnumerable<Event> GetByOrganizerId(string OrganizerId);
         IEnumerable<Event> GetAllApprovedEvents();
         void ApproveEvent(int eventId);
         void RejectEvent(int eventId);

@@ -37,7 +37,7 @@
                             <h5 class="card-title">@item.Name</h5>
                             <p class="card-text">@item.Description</p>
                             <p class="text-muted">on: @item.Date</p>
-                            <a href="#" class="btn btn-primary btn-custom">Read More</a>
+                            <a asp-controller="Event" asp-action="EventDetails" asp-route-id="@item.Id" class="btn btn-primary btn-custom">Read More</a>
                         </div>
                     </div>
                 </div>

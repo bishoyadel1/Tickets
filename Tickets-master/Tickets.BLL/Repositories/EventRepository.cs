@@ -60,6 +60,11 @@ namespace Tickets.BLL.Repositories
                             e.Description.ToLower().Contains(lowerSearchTerm))
                 .ToList();
         }
-        }
+
+        public IEnumerable<Event> GetByOrganizerId(string OrganizerId)
+            => context.Events.Where(i => i.OrganizerId == OrganizerId).ToList();
+           
+
+    }
     }
 

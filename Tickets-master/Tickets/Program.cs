@@ -32,6 +32,8 @@ builder.Services.AddScoped<IOrganizrRepository, OrganizrRepository>();
 
 builder.Services.AddScoped<IEventRepository, EventRepository>();
 
+builder.Services.AddScoped<IEventUserRepository, EventUserRepository>();
+
 builder.Services.AddScoped<IUintOfWork, UintOfWork>();
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));

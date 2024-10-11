@@ -41,6 +41,26 @@
                            
                         </li>
                         }
+                        @if (User.IsInRole("Admin") || User.IsInRole("Organizer"))
+                        {
+                        <li>
+                                <a asp-action="GetTicketUploaded" asp-controller="Event" class="nav-link px-0 align-middle">
+                                <i class="fa-brands fa-expeditedssl fa-xl"></i> <span class="ms-1 d-none d-sm-inline"> My Ticket Uploaded</span>
+                            </a>
+                           
+                        </li>
+                        }
+
+                       
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li>
+                                <a asp-action="GetBookedEvents"  asp-controller="Event" class="nav-link px-0 align-middle">
+                                    <i class="fa-brands fa-expeditedssl fa-xl"></i> <span class="ms-1 d-none d-sm-inline">Booked Tickets</span>
+                                </a>
+
+                            </li>
+                        }
                      
                     </ul>
                     <hr>
@@ -77,16 +97,22 @@
                             <nav aria-label="breadcrumb">
                             <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5 text-white">
                                 <li class="breadcrumb-item text-sm text-white"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-                                <li class="breadcrumb-item text-sm text-dark active text-white" aria-current="page">Dashboard</li>
+                                @if (User.IsInRole("Admin") || User.IsInRole("Organizer"))
+                                {
+                                    <h6 class="font-weight-bolder mb-0 text-white">Dashboard</h6>
+                                }
+                                else if (User.Identity.IsAuthenticated)
+                                {
+                                    <h6 class="font-weight-bolder mb-0 text-white">Profile</h6>
+                                }
                                 </ol>
-                            <h6 class="font-weight-bolder mb-0 text-white">Dashboard</h6>
+                             
+                            
                             </nav>
                         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
                             
                                 <ul class="navbar-nav  justify-content-end text-white">
-                                <li class="nav-item d-flex align-items-center  text-white">
-                                    <a class="btn btn-outline-primary btn-sm mb-0 me-3 text-white" target="_blank" href="https://www.creative-tim.com/builder?ref=navbar-soft-ui-dashboard">Online Builder</a>
-                                    </li>
+                                
                                 <li class="nav-item d-flex align-items-end text-white">
                                     <a href="javascript:;" class="nav-link  font-weight-bold px-0 text-white">
                                             <i class="fa fa-user me-sm-1"></i>

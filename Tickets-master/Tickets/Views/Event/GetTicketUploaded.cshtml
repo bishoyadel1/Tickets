@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Event>
+
+@{
+    ViewData["Title"] = "BookedEvents";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+<h1>My Ticket Uploaded</h1>
+
+<main class="container my-5">
+    @foreach (var item in Model)
+    {
+  <div class="card mb-3" >
+  <div class="row g-0">
+          
+            
+    <div class="col-md-9">
+                    <img src="@Url.Content("~/Images/Events/" + item.Image)" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text">@item.Description</p>
+                        <p class="card-text"><small class="text-body-secondary">@item.Date</small></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+    }
+</main>
