@@ -12,20 +12,22 @@
     </div>
 </div>
 
-<div class="container" style="height:1300px">
+<div class="container" >
     <br />
-    <h1 class="display-3">Latest Events</h1>
-
-    <!-- Search Form -->
-    <form asp-controller="Event" asp-action="SearchEvent" method="get">
-        <div class="input-group mb-3">
-            <input type="text" name="searchTerm" class="form-control" placeholder="Search events..." value="@ViewData["SearchTerm"]">
-            <button class="btn btn-secondary" type="submit">Search</button>
-            </div>
-    </form>
-
-    <!-- Sort Options with Bootstrap Dropdown -->
-    <div class="d-flex justify-content-between mb-3">
+    <h1 class="display-3 lead text-opacity-75">Latest Events</h1>
+    <div class="row">
+        <div class="col-md-10 col-8">
+            <!-- Search Form -->
+            <form asp-controller="Event" asp-action="SearchEvent" method="get">
+                <div class="input-group mb-3">
+                    <input type="text" name="searchTerm" class="form-control" placeholder="Search events..." value="@ViewData["SearchTerm"]">
+                    <button class="btn btn-secondary" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2 col-4 d-flex  justify-content-center">
+            <!-- Sort Options with Bootstrap Dropdown -->
+    <div class="d-flex  justify-content-center mb-3">
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownSortMenu" data-bs-toggle="dropdown" aria-expanded="false">
                 Sort Events
@@ -46,6 +48,11 @@
             </ul>
         </div>
     </div>
+</div>
+
+    </div>
+    
+
 
     <br />
     <div class="row">
@@ -53,15 +60,30 @@
         {
             @foreach (var item in Model)
             {
-                <div class="col-md-4">
+                <div class="col-12">
                     <div class="card article-card">
-                        <img src="@Url.Content("~/Images/Events/" + item.ImageUrl)" class="card-img-top" alt="@item.Name">
+                        <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="@Url.Content("~/Images/Events/" + item.ImageUrl)" class="img-fluid rounded-start" alt="@item.Name">
+                        </div>
+                        <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">@item.Name</h5>
                             <p class="card-text">@item.Description</p>
                             <p class="text-muted">on: @item.Date.ToShortDateString()</p>
-                            <a asp-action="EventDetails" asp-controller="Event" asp-route-id="@item.Id" class="btn btn-primary btn-custom">Read More</a>
+                            <div class="row">
+                                        <div class="col-6">
+                                            <a asp-action="EventDetails" asp-controller="Event" asp-route-id="@item.Id" class="btn btn-primary btn-custom w-100">Read More</a>
+
+                                        </div>
+                                           <div class="col-6">
+                                            <a asp-action="BookTicket" asp-controller="Event" asp-route-id="@item.Id" class="btn btn-success btn-custom w-100">Book Now</a>
+
+                                        </div>
+                            </div>
                         </div>
+                       </div>
+                    </div>
                     </div>
                 </div>
             }
@@ -74,3 +96,24 @@
         }
     </div>
 </div>
+@if (ViewData["TotalPages"] != null && (int)ViewData["TotalPages"] > 1)
+{
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item  @(((int)ViewData["CurrentPage"]) == 1 ? "disabled" : "")">
+                <a class="page-link bg-dark text-white" href="@Url.Action("SearchEvent", new { page = ((int)ViewData["CurrentPage"]) - 1, searchTerm = ViewData["SearchTerm"], sortBy = ViewData["SortBy"], isAscending = ViewData["IsAscending"] })">Previous</a>
+            </li>
+
+            @for (var i = 1; i <= (int)ViewData["TotalPages"]; i++)
+            {
+                <li class="page-item @(((int)ViewData["CurrentPage"]) == i ? "active" : "")">
+                    <a class="page-link bg-dark text-white" href="@Url.Action("SearchEvent", new { page = i, searchTerm = ViewData["SearchTerm"], sortBy = ViewData["SortBy"], isAscending = ViewData["IsAscending"] })">@i</a>
+                </li>
+            }
+
+            <li class="page-item  @(((int)ViewData["CurrentPage"]) == (int)ViewData["TotalPages"] ? "disabled" : "")">
+                <a class="page-link bg-dark text-white" href="@Url.Action("SearchEvent", new { page = ((int)ViewData["CurrentPage"]) + 1, searchTerm = ViewData["SearchTerm"], sortBy = ViewData["SortBy"], isAscending = ViewData["IsAscending"] })">Next</a>
+            </li>
+        </ul>
+    </nav>
+}

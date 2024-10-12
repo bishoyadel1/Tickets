@@ -144,10 +144,9 @@ namespace Tickets.Controllers
         }
 
 
-     
-      
-        public IActionResult SearchEvent(string searchTerm, string sortBy = "Date", bool isAscending = false)
 
+
+        public IActionResult SearchEvent(string searchTerm, string sortBy = "Date", bool isAscending = false, int page = 1, int pageSize = 6)
         {
             // Fetch events based on search term
             var events = eventRepository.SearchEvents(searchTerm);
@@ -162,18 +161,24 @@ namespace Tickets.Controllers
                     events = isAscending ? events.OrderBy(e => e.Name).ToList() : events.OrderByDescending(e => e.Name).ToList();
                     break;
                 default:
-                    // Default sorting (by Date in descending order)
                     events = events.OrderByDescending(e => e.Date).ToList();
                     break;
             }
 
-            // Pass search term and sort parameters to the view
+            // Pagination logic
+            int totalEvents = events.Count();
+            events = events.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+
+            // Pass data to the view
             ViewData["SearchTerm"] = searchTerm;
             ViewData["SortBy"] = sortBy;
             ViewData["IsAscending"] = isAscending;
+            ViewData["CurrentPage"] = page;
+            ViewData["TotalPages"] = (int)Math.Ceiling((double)totalEvents / pageSize);
 
             return View("~/Views/Home/Index.cshtml", events);
         }
+
 
     }
 }

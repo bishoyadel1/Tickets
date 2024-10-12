@@ -26,8 +26,8 @@ namespace Tickets.Controllers
         public async Task<IActionResult> Index()
         {
 
-            var approvedEvents = eventRepository.GetAllApprovedEvents();
-            return View(approvedEvents);
+          //  var approvedEvents = eventRepository.GetAllApprovedEvents();
+            return RedirectToAction("SearchEvent","Event");
         }
 
         public IActionResult Privacy()
