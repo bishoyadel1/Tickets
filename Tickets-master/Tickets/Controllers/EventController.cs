@@ -146,7 +146,7 @@ namespace Tickets.Controllers
 
 
 
-        public IActionResult SearchEvent(string searchTerm, string sortBy = "Date", bool isAscending = false, int page = 1, int pageSize = 6)
+        public IActionResult SearchEvent(string searchTerm, string sortBy = "Date", bool isAscending = false, int page = 1, int pageSize = 3)
         {
             // Fetch events based on search term
             var events = eventRepository.SearchEvents(searchTerm);

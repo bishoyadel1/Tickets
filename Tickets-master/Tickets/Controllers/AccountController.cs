@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Tickets.EmailConfig;
 using Tickets.Models;
@@ -62,6 +63,7 @@ namespace Tickets.Controllers
             if (ModelState.IsValid)
             {
                 var user = await userManager.FindByEmailAsync(model.Email);
+                
                 if (user != null)
                 {
                     var token = await userManager.GeneratePasswordResetTokenAsync(user);
@@ -113,6 +115,60 @@ namespace Tickets.Controllers
         public IActionResult Register()
         {
             return View();
+        }
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> ManageRole()
+        {
+            var users = userManager.Users.ToList();
+            var userRoles = new List<UsersRoleViewModel>();
+
+            foreach (var user in users)
+            {
+                var Admin1 = await userManager.IsInRoleAsync(user, "Admin");
+                var Organizer1 = await userManager.IsInRoleAsync(user, "Organizer");
+                var userRole = new UsersRoleViewModel { Email= user.Email, Id=user.Id,Name=user.UserName, IsAdmin = Admin1 , IsOrganizer =Organizer1 };
+                userRoles.Add(userRole);
+            }
+          
+
+            return View(userRoles);
+        }
+
+
+
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> RemoveRoleFromUser(string UserId , string rolename)
+        {
+            var user = await userManager.FindByIdAsync(UserId);
+            var role = await roleManager.FindByNameAsync(rolename);
+
+            if (user != null && role != null)
+            {
+             await userManager.RemoveFromRoleAsync(user, role.Name);
+
+                    return RedirectToAction("ManageRole");
+       
+            }
+           
+               return RedirectToAction("ManageRole");
+
+ 
+        }
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> AddRoleToUser(string UserId, string rolename)
+        {
+            var user = await userManager.FindByIdAsync(UserId);
+            var role = await roleManager.FindByNameAsync(rolename);
+
+            if (user != null && role != null)
+            {
+                await userManager.AddToRoleAsync(user, rolename);
+                return RedirectToAction("ManageRole");
+            }
+
+            return RedirectToAction("ManageRole");
+
+
         }
 
         [HttpPost]

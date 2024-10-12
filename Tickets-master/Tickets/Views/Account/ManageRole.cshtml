@@ -1,0 +1,48 @@
+﻿@model IEnumerable<UsersRoleViewModel>
+
+@{
+    ViewData["Title"] = "EventRequests";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h1>Manage User Role </h1>
+
+<main class="container">
+    <table class="table table-dark table-borderless rounded">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Admin</th>
+                <th>Organizer</th>
+            </tr>
+        </thead>
+        <tbody id="productDataa">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                    <td>
+                        <!-- Admin Role Checkbox -->
+                        <form method="post" asp-action="@((item.IsAdmin) ? "RemoveRoleFromUser" : "AddRoleToUser")" asp-controller="Account">
+                            <input type="hidden"  name="UserId" value="@item.Id" />
+                            <input type="hidden"  name="rolename" value="Admin" />
+                            <input type="checkbox" style="height:30px;width:30px;" class="w-100" onchange="this.form.submit()" @(item.IsAdmin ? "checked" : "") />
+                        </form>
+                    </td>
+                    <td>
+                        <!-- Organizer Role Checkbox -->
+                        <form method="post" asp-action="@((item.IsOrganizer) ? "RemoveRoleFromUser" : "AddRoleToUser")" asp-controller="Account">
+                            <input type="hidden" name="UserId" value="@item.Id" />
+                            <input type="hidden" name="rolename" value="Organizer" />
+                            <input type="checkbox" style="height:30px;width:30px;" onchange="this.form.submit()" @(item.IsOrganizer ? "checked" : "") />
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>

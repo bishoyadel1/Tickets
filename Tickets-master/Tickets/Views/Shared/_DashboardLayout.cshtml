@@ -41,6 +41,14 @@
                            
                         </li>
                         }
+                          @if (User.IsInRole("Admin")){
+                        <li>
+                            <a asp-action="ManageRole" asp-controller="Account" class="nav-link px-0 align-middle">
+                                    <i class="fa-brands fa-expeditedssl fa-xl"></i> <span class="ms-1 d-none d-sm-inline">Manage User Role</span>
+                            </a>
+                           
+                        </li>
+                        }
                         @if (User.IsInRole("Admin") || User.IsInRole("Organizer"))
                         {
                         <li>
@@ -135,7 +143,7 @@
                             </div>
                         </div>
                     </nav>
-            <div class="p-5">@RenderBody()</div>
+            <div class="w-100 p-4">@RenderBody()</div>
                 
             </div>
         </div>
