@@ -55,12 +55,12 @@
             {
                 <div class="col-md-4">
                     <div class="card article-card">
-                        <img src="@Url.Content("~/Images/Events/" + item.Image)" class="card-img-top" alt="@item.Name">
+                        <img src="@Url.Content("~/Images/Events/" + item.ImageUrl)" class="card-img-top" alt="@item.Name">
                         <div class="card-body">
                             <h5 class="card-title">@item.Name</h5>
                             <p class="card-text">@item.Description</p>
                             <p class="text-muted">on: @item.Date.ToShortDateString()</p>
-                            <a asp-action="EventDetails" asp-controller="Event" class="btn btn-primary btn-custom">Read More</a>
+                            <a asp-action="EventDetails" asp-controller="Event" asp-route-id="@item.Id" class="btn btn-primary btn-custom">Read More</a>
                         </div>
                     </div>
                 </div>

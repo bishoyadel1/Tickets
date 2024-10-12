@@ -78,8 +78,10 @@ namespace Tickets.Controllers
                 objEvent.Image != null && objEvent.Date != null)
                 
             {
+                
                 var user = await userManager.GetUserAsync(User);
                 objEvent.OrganizerId = user.Id;
+                objEvent.ImageUrl = ImageConfig.ImageSetting.UploadImage(objEvent.Image);
                 eventRepo.Add(objEvent);
                 return RedirectToAction("Index");
             }

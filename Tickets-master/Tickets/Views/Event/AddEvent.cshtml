@@ -13,35 +13,35 @@
         <div class="col-md-8">
             <div class="form-container">
                 <h2 class="mb-4">Event Registration Form</h2>
-                <form method="post" action="/Event/SaveEvent">
+                <form method="post" action="/Event/SaveEvent" enctype="multipart/form-data">
                     <!-- Event Name -->
                     <div class="mb-3">
                         <label for="Name" class="form-label">Event Name</label>
-                        <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter event name" required>
+                        <input type="text" class="form-control " asp-for="Name" id="Name" name="Name" placeholder="Enter event name" required>
                     </div>
 
                     <!-- Total Number of Tickets -->
                     <div class="mb-3">
                         <label for="TotalNumberOfTicekts" class="form-label">Total Number of Tickets</label>
-                        <input type="number" class="form-control" id="TotalNumberOfTicekts" name="TotalNumberOfTicekts" placeholder="Enter total number of tickets" required>
+                        <input type="number" asp-for="TotalNumberOfTickets" class="form-control" id="TotalNumberOfTicekts" name="TotalNumberOfTicekts" placeholder="Enter total number of tickets" required>
                     </div>
 
                     <!-- Description -->
                     <div class="mb-3">
                         <label for="Description" class="form-label">Description (500 words max)</label>
-                        <textarea class="form-control" id="Description" name="Description" rows="4" placeholder="Enter event description" maxlength="500" required></textarea>
+                        <textarea class="form-control" asp-for="Description" id="Description" name="Description" rows="4" placeholder="Enter event description" maxlength="500" required></textarea>
                     </div>
 
                     <!-- Image -->
                     <div class="mb-3">
                         <label for="Image" class="form-label">Image</label>
-                        <input type="file" class="form-control-file" id="Image" name="Image" accept="image/*" required>
+                        <input type="file" class="form-control-file" asp-for="Image" id="Image" name="Image" accept="image/*"   required >
                     </div>
 
                     <!-- Date -->
                     <div class="mb-3">
                         <label for="Date" class="form-label">Date</label>
-                        <input type="Date" class="form-control" id="Date" name="Date" required>
+                        <input type="Date" class="form-control" asp-for="Date" id="Date" name="Date" required>
                     </div>
 
                     <!-- Submit Button -->

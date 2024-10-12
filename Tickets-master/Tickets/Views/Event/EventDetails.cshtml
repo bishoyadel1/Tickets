@@ -2,12 +2,21 @@
 @*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
-
+@if (Model != null)
+{
     <div class="row">
         <!-- Product Image -->
         <div class="col-12 col-md-6 mb-4 mb-md-0 EventDetailsImage">
-@*        <img src="@Url.Content("~/Images/Events/" + Model.Image)" alt="Product Image" class="product-image">
-*@        </div>
+               @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Url.Content("~/Images/Events/" + Model.ImageUrl)" alt="Event Image" class="product-image">
+        }
+        else
+        {
+            <!-- Placeholder image if no image URL is set -->
+            <img src="~/Images/Events/placeholder.png" alt="Placeholder Image" class="product-image">
+        }
+       </div>
         <!-- Product Details -->
         <div class="col-12 col-md-6">
             <div class="details-card">
@@ -22,5 +31,5 @@
             </div>
         </div>
     </div>
-
+    }
 <br/>
