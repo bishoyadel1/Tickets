@@ -256,9 +256,6 @@ namespace Tickets.DLL.Migrations
                     b.Property<string>("OrganizerId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
                     b.Property<int>("TotalNumberOfTickets")
                         .HasColumnType("int");
 
