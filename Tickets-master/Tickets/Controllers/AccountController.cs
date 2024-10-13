@@ -134,7 +134,7 @@ namespace Tickets.Controllers
             return View(userRoles);
         }
 
-
+      
         public async Task<IActionResult> ShowUserProfile()
         {
             var user = await userManager.GetUserAsync(User);

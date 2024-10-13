@@ -21,11 +21,20 @@
                         <span class="fs-5 d-none d-sm-inline">Menu</span>
                     </a>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+
                         <li class="nav-item">
                             <a href="../Home" class="nav-link align-middle px-0">
                                 <i class="fa-solid fa-house fa-xl"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
                             </a>
                         </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link align-middle px-0" asp-action="ShowUserProfile" asp-controller="Account">
+                                    <i class="fa-solid fa-accessible-icon fa-xl"></i> <span class="ms-1 d-none d-sm-inline">Profile</span>
+                                </a>
+                            </li>
+                        }
                         @if (User.IsInRole("Admin") || User.IsInRole("Organizer"))
                         {
                             <a href="/Event/AddEvent"  class="nav-link px-0 align-middle">
