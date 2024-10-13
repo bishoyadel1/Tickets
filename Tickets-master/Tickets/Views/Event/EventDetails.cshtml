@@ -1,4 +1,4 @@
-﻿@model Event
+﻿@model EventOrgnaiserViewModel
 @*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -20,13 +20,13 @@
         <!-- Product Details -->
         <div class="col-12 col-md-6">
             <div class="details-card">
-                <h2>@Model.Name</h2>
+                <h2>@Model.EventName</h2>
                 <p class="mt-4">@Model.Description</p>
                 <p><strong>Date:</strong>@Model.Date</p>
-                <p><strong>Organizer:</strong> (Not Now After Finishing Identity)</p>
+                <p><strong>Organizer:</strong> @Model.OrganizerName</p>
             <p><strong>Total available Tickets : </strong> @Model.TotalNumberOfTickets</p>
             
-            <a asp-controller="Event" asp-action="BookTicket" asp-route-id="@Model.Id" class="btn btn-primary btn-custom">Book Now</a>
+            <a asp-controller="Event" asp-action="BookTicket" asp-route-id="@Model.EventId" class="btn btn-primary btn-custom">Book Now</a>
 
             </div>
         </div>

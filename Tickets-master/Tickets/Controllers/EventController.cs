@@ -11,6 +11,7 @@ namespace Tickets.Controllers
 {
     public class EventController : Controller
     {
+       
         private readonly IGenericRepository<Event> eventRepo;
         private readonly IEventRepository eventRepository;
         private readonly UserManager<IdentityUser> userManager;
@@ -28,11 +29,26 @@ namespace Tickets.Controllers
             return View();
         }
 
-        public IActionResult EventDetails(int Id)
+        public async Task<IActionResult> EventDetails(int Id)
         {
             var DesiredEvent = eventRepo.Get(Id).Result;
+            var EventOrgnaizer = await userManager.FindByIdAsync(DesiredEvent.OrganizerId);
+            string organizerName = EventOrgnaizer.UserName;
 
-            return View(DesiredEvent);
+            EventOrgnaiserViewModel eventOrgnaiserViewModel = new EventOrgnaiserViewModel()
+            {
+                EventId = Id,
+                OrganizerName = organizerName,
+                EventName =    DesiredEvent.Name,
+                Date = DesiredEvent.Date,
+                Description = DesiredEvent.Description,
+                TotalNumberOfTickets = DesiredEvent.TotalNumberOfTickets,
+                Image = DesiredEvent.Image,
+                ImageUrl = DesiredEvent.ImageUrl
+            };
+            
+
+            return View(eventOrgnaiserViewModel);
         }
         [Authorize]
         public async Task<IActionResult> BookTicket(int Id)

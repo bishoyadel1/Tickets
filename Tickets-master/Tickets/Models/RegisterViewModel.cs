@@ -7,6 +7,7 @@ namespace Tickets.Models
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
 
+        
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress(ErrorMessage ="Enter vaild email address")]
         public string Email { get; set; }
