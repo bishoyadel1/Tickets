@@ -93,7 +93,7 @@ namespace Tickets.Controllers
                 objEvent.TotalNumberOfTickets != null &&
                 objEvent.Description != null &&
                 objEvent.Image != null && objEvent.Date != null
-                && objEvent.TicketPrice != null
+                && objEvent.Price != null
                 )
                 
             {
