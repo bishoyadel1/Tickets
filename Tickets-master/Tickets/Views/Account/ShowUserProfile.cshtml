@@ -11,16 +11,63 @@
     </div>
     <div class="card-body">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>UserName : </strong>@Model.UserName</li>
-            <li class="list-group-item"><strong>Email : </strong>@Model.Email</li>
-            <li class="list-group-item"><strong>Phone : </strong>@Model.Phone</li>
+            <li class="list-group-item text-black"><strong>UserName : </strong>@Model.UserName</li>
+            <li class="list-group-item text-black"><strong>Email : </strong>@Model.Email</li>
+            <li class="list-group-item text-black"><strong>Phone : </strong>@Model.Phone</li>
         </ul>
-    </div> 
+        <br />
+        <div>
+            <a asp-action="EditUserProfile" class="btn btn-primary">Edit Profile</a>
+        </div>
+    </div>
 </div>
-<div class="text-black-50">
-    <a asp-action="EditUserProfile" class="btn btn-primary">Edit</a>
-</div>
 
 
 
 
+
+
+
+<br />
+
+<style>
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 20px;
+        padding: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+    }
+
+    .card-header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .card-title {
+        margin: 0;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+    .list-group-item {
+        border: none;
+        padding: 5px 0;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 3px;
+        text-decoration: none;
+        display: inline-block;
+    }
+</style>
