@@ -151,6 +151,46 @@ namespace Tickets.Controllers
             return View(profileViewModel);
         }
 
+        public async Task<IActionResult> EditUserProfile()
+        {
+            var user = await userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            var profileViewModel = new ProfileViewModel
+            {
+                UserName = user.UserName,
+                Email = user.Email,
+                Phone = user.PhoneNumber
+            };
+            return View(profileViewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditUserProfile(ProfileViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var user = await userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            user.UserName = model.UserName;
+            user.Email = model.Email;
+            user.PhoneNumber = model.Phone;
+            var updateResult = await userManager.UpdateAsync(user);
+            if (!updateResult.Succeeded)
+            {
+                return View(model);
+            }
+            return RedirectToAction(nameof(ShowUserProfile));
+        }
+
 
 
         [Authorize(Roles = "Admin")]
