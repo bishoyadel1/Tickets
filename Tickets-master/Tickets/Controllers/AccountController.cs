@@ -135,6 +135,23 @@ namespace Tickets.Controllers
         }
 
 
+        public async Task<IActionResult> ShowUserProfile()
+        {
+            var user = await userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            var profileViewModel = new ProfileViewModel
+            {
+                UserName = user.UserName,
+                Email = user.Email,
+                Phone = user.PhoneNumber
+            };
+            return View(profileViewModel);
+        }
+
+
 
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> RemoveRoleFromUser(string UserId , string rolename)
