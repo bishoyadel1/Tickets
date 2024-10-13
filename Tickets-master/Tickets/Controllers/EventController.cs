@@ -44,7 +44,8 @@ namespace Tickets.Controllers
                 Description = DesiredEvent.Description,
                 TotalNumberOfTickets = DesiredEvent.TotalNumberOfTickets,
                 Image = DesiredEvent.Image,
-                ImageUrl = DesiredEvent.ImageUrl
+                ImageUrl = DesiredEvent.ImageUrl,
+                TicketPrice = DesiredEvent.TicketPrice,
             };
             
 
@@ -84,6 +85,7 @@ namespace Tickets.Controllers
             var Eevent = new Event();
             return View(Eevent);
         }
+
         [Authorize(Roles = "Admin,Organizer")]
         [HttpPost]
         public async Task<IActionResult> SaveEvent(Event objEvent)
@@ -91,7 +93,9 @@ namespace Tickets.Controllers
             if (objEvent.Name != null &&
                 objEvent.TotalNumberOfTickets != null &&
                 objEvent.Description != null &&
-                objEvent.Image != null && objEvent.Date != null)
+                objEvent.Image != null && objEvent.Date != null
+                && objEvent.TicketPrice != null
+                )
                 
             {
                 

@@ -25,6 +25,8 @@
                 <p><strong>Date:</strong>@Model.Date</p>
                 <p><strong>Organizer:</strong> @Model.OrganizerName</p>
             <p><strong>Total available Tickets : </strong> @Model.TotalNumberOfTickets</p>
+                <p><strong>Ticket price : </strong> @Model.TicketPrice EGP</p>
+
             
             <a asp-controller="Event" asp-action="BookTicket" asp-route-id="@Model.EventId" class="btn btn-primary btn-custom">Book Now</a>
 
