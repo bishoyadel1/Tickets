@@ -21,6 +21,7 @@ namespace Tickets.DLL.Models
         [Required]
         public int TotalNumberOfTickets { get; set; }
         public string? ImageUrl { get; set; }
+        public double Price  { get; set; }
 
         [NotMapped]
         public IFormFile Image { get; set; }

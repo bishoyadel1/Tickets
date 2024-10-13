@@ -54,6 +54,7 @@
     
 
 
+
     <br />
     <div class="row">
         @if (Model != null && Model.Any())
@@ -69,6 +70,7 @@
                         <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">@item.Name</h5>
+                                    <h5 class="card-title"><span class="text-success"> Price : </span>  @item.Price $</h5>
                             <p class="card-text">@item.Description</p>
                             <p class="text-muted">on: @item.Date.ToShortDateString()</p>
                             <div class="row">

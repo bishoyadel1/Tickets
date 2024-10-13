@@ -1,35 +1,46 @@
 ﻿@model EventOrgnaiserViewModel
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
 @if (Model != null)
 {
-    <div class="row">
-        <!-- Product Image -->
-        <div class="col-12 col-md-6 mb-4 mb-md-0 EventDetailsImage">
-               @if (!string.IsNullOrEmpty(Model.ImageUrl))
-        {
-            <img src="@Url.Content("~/Images/Events/" + Model.ImageUrl)" alt="Event Image" class="product-image">
-        }
-        else
-        {
-            <!-- Placeholder image if no image URL is set -->
-            <img src="~/Images/Events/placeholder.png" alt="Placeholder Image" class="product-image">
-        }
-       </div>
-        <!-- Product Details -->
-        <div class="col-12 col-md-6">
-            <div class="details-card">
-                <h2>@Model.EventName</h2>
-                <p class="mt-4">@Model.Description</p>
-                <p><strong>Date:</strong>@Model.Date</p>
-                <p><strong>Organizer:</strong> @Model.OrganizerName</p>
-            <p><strong>Total available Tickets : </strong> @Model.TotalNumberOfTickets</p>
-            
-            <a asp-controller="Event" asp-action="BookTicket" asp-route-id="@Model.EventId" class="btn btn-primary btn-custom">Book Now</a>
+    <div class="row mb-5">
+        <!-- Event Image -->
+        <div class="col-12 col-md-5 my-4 ">
+            <div class="event-image-container">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="@Url.Content("~/Images/Events/" + Model.ImageUrl)" alt="Event Image" class="img-fluid event-image rounded">
+                }
+                else
+                {
+                    <img src="~/Images/Events/placeholder.png" alt="Placeholder Image" class="img-fluid event-image">
+                }
+            </div>
+        </div>
 
+        <!-- Event Details -->
+        <div class="col-12 col-md-7">
+            <div class="event-details-card p-4">
+                <h1 class="event-title mb-3">@Model.EventName</h1>
+                <p class="event-description mb-4">@Model.Description</p>
+                <p><strong>Date:</strong> @Model.Date</p>
+                <p><strong>Organizer:</strong> @Model.OrganizerName</p>
+                <p><strong class="text-danger">Price:</strong> @Model.Price</p>
+                <p><strong>Total Available Tickets:</strong> @Model.TotalNumberOfTickets</p>
+
+                <!-- Ticket Sales Section -->
+                <div class="ticket-sales-section mt-4">
+                    @if (Model.TotalNumberOfTickets <= 10)
+                    {
+                        <p class="text-danger"><strong>Hurry! Limited tickets available.</strong></p>
+                    }
+                    else
+                    {
+                        <p><strong>Tickets Available:</strong> @Model.TotalNumberOfTickets</p>
+                    }
+                </div>
+
+                <!-- Book Now Button -->
+                <a asp-controller="Event" asp-action="BookTicket" asp-route-id="@Model.EventId" class="btn btn-primary btn-lg mt-3">Book Now</a>
             </div>
         </div>
     </div>
-    }
-<br/>
+}

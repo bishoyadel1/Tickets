@@ -44,7 +44,8 @@ namespace Tickets.Controllers
                 Description = DesiredEvent.Description,
                 TotalNumberOfTickets = DesiredEvent.TotalNumberOfTickets,
                 Image = DesiredEvent.Image,
-                ImageUrl = DesiredEvent.ImageUrl
+                ImageUrl = DesiredEvent.ImageUrl,
+                Price= DesiredEvent.Price,
             };
             
 
@@ -63,7 +64,7 @@ namespace Tickets.Controllers
                     CheckForTicket.TotalNumberOfTickets--;
                     await eventUserRepository.Add(UserEvent);
                     await eventRepository.Update(CheckForTicket);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("GetBookedEvents");
                 }
                 else
                     return RedirectToAction("Index", "Home");

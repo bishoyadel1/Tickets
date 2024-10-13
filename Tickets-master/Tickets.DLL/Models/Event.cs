@@ -28,7 +28,7 @@ namespace Tickets.DLL.Models
         public string  Description { get; set; }
         public string? OrganizerId { get; set; } = null;
         public ICollection<IdentityUser> Users { get; set; }
-
+        public double Price { get; set; }
         public bool IsApproved { get; set; }
         public bool IsRejected { get; set; }
     }
