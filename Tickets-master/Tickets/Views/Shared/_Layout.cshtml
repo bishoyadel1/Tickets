@@ -17,17 +17,15 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark Top-header">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse  justify-content-around" id="navbarSupportedContent">
-@* 
                     <a class="navbar-brand mt-2 mt-lg-0" asp-area="" asp-controller="Home" asp-action="Index">
-                        <img src="~/Images/Logo.jpg" alt="MDB Logo" style="height:35px;" loading="lazy" />
-                    </a> *@
-
+                        <img src="~/Images/ticketing-system.png" alt="MDB Logo" style="height:35px;" loading="lazy" />
+                    </a>
                     <ul class="navbar-nav  mb-2 ms-lg-4 mb-lg-0">
                         <li class="nav-item mx-lg-3">
                             <a class="nav-link fw-bold text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item mx-lg-3">
-                            <a class="nav-link fw-bold text-white" href="#">Contact Us</a>
+                            <a class="nav-link fw-bold text-white" asp-action="ContactUs" asp-controller="Home">Contact Us</a>
                         </li>
                         <li class="nav-item mx-lg-3">
                             <a class="nav-link fw-bold text-white" asp-action="About" asp-controller="Home">About</a>
@@ -41,7 +39,7 @@
                                 <a class="nav-link fw-bold text-white" asp-area="" asp-controller="Event" asp-action="Index">Dashboard</a>
                             </li>
                         }
-                      
+
                     </ul>
 
                     @if (User.Identity.IsAuthenticated)
@@ -54,7 +52,7 @@
                                     <a class="dropdown-item fw-bold text-white d-inline ms-3" asp-controller="Account" asp-action="Logout">Log Out</a>
 
                                 </div>
-                              
+
 
                             </div>
                         </div>
