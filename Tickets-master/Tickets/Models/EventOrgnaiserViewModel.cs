@@ -26,7 +26,7 @@ namespace Tickets.DLL.Models
         [NotMapped]
         public IFormFile Image { get; set; }
         public string Description { get; set; }
-
+        public double TicketPrice { get; set; }
         public string OrganizerName { get; set; }
 
     }
