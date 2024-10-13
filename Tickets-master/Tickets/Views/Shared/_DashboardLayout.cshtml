@@ -90,10 +90,7 @@
                     <div class="dropdown pb-4">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
-                            @if (User.IsInRole("Admin"))
-                            {
-                                <span class="d-none d-sm-inline mx-1"> Admin</span>
-                            }
+                          
                             @if (User.IsInRole("Admin") && User.IsInRole("Organizer"))
                             {
                                 <span class="d-none d-sm-inline mx-1"> Admin</span>

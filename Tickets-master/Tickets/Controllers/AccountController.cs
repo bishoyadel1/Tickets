@@ -244,9 +244,7 @@ namespace Tickets.Controllers
                 };
         
                 var result = await userManager.CreateAsync(user,model.Password);
-                if(model.IsOrganizer is true)
-                     await userManager.AddToRoleAsync(user, "Organizer");
-              
+          
 
                 if (result.Succeeded )
                 {
@@ -255,7 +253,11 @@ namespace Tickets.Controllers
                         await roleManager.CreateAsync(new IdentityRole { Name = "Admin" });
                         await roleManager.CreateAsync(new IdentityRole { Name = "Organizer" });
                         await userManager.AddToRoleAsync(user, "Admin");
+                     
                     }
+                    if (model.IsOrganizer is true)
+                        await userManager.AddToRoleAsync(user, "Organizer");
+
                     return RedirectToAction("Login");
                 }
                 else

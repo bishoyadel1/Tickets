@@ -26,8 +26,7 @@ namespace Tickets.DLL.Models
         [NotMapped]
         public IFormFile Image { get; set; }
 
-        [Required]
-        public double TicketPrice { get; set; }
+      
         public string  Description { get; set; }
         public string? OrganizerId { get; set; } = null;
         public ICollection<IdentityUser> Users { get; set; }

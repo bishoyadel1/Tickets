@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\css\Dashboard\" />
+    <Folder Include="wwwroot\Images\Events\" />
     <Folder Include="wwwroot\js\Dashboard\" />
   </ItemGroup>
 

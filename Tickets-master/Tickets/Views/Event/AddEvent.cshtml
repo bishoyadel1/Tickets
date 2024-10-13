@@ -25,7 +25,13 @@
                         <label for="TotalNumberOfTickets" class="form-label">Total Number of Tickets</label>
                         <input type="number" asp-for="TotalNumberOfTickets" class="form-control" id="TotalNumberOfTickets" name="TotalNumberOfTickets" placeholder="Enter total number of tickets" required>
                     </div>
-            
+
+                    <div class="mb-3">
+                        <label for="Price" class="form-label">Price of Tickets</label>
+                        <input type="number" asp-for="Price" class="form-control" id="Price" name="Price" placeholder="Price of tickets" required>
+                    </div>
+
+
                     <!-- Description -->
                     <div class="mb-3">
                         <label for="Description" class="form-label">Description (500 words max)</label>
@@ -44,12 +50,7 @@
                         <input type="Date" class="form-control" asp-for="Date" id="Date" name="Date" required>
                     </div>
 
-                    <!-- Total Number of Tickets -->
-                    <div class="mb-3">
-                        <label for="TicketPrice" class="form-label">price per ticket</label>
-                        <input type="number" asp-for="TicketPrice" class="form-control" id="TicketPrice" name="TicketPrice" placeholder="Enter Ticket price" required>
-                    </div>
-
+           
 
                     <!-- Submit Button -->
                     <button type="submit" class="btn btn-primary">Submit</button>
