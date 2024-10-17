@@ -25,7 +25,9 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(ob =>
 
 
 builder.Services.AddDbContext<TicketsDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefualtConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); // Fix here
+
+
 
 
 builder.Services.AddScoped<IOrganizrRepository, OrganizrRepository>();
